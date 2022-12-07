@@ -1,0 +1,10 @@
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe.config
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.pdb
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.AssemblyReference.cache
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Form1.resources
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Properties.Resources.resources
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.GenerateResource.cache
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.CoreCompileInputs.cache
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.exe
+D:\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.pdb
