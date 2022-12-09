@@ -90,9 +90,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ugras.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\hatter.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\santa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ugras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
