@@ -22,5 +22,6 @@ namespace KaracsonyiJatek2
             new Jatek(this).Show();
             this.Hide();
         }
+
     }
 }
