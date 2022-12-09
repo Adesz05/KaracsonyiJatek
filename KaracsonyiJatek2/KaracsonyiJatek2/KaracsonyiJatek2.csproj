@@ -114,7 +114,11 @@
     <None Include="Resources\ugras.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\menu_background.jpg" />
+=======
+    <None Include="Resources\teto2.png" />
+>>>>>>> 12504c1ea891164087b43afc2547498d34c7baca
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
