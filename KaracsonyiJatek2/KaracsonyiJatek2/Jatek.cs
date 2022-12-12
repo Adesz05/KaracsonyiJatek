@@ -28,7 +28,7 @@ namespace KaracsonyiJatek2
 
         private void TetoGen()
         {
-            List<Image> kepek = new List<Image>() { Properties.Resources.egyhazteto, Properties.Resources.masodikhazteto, Properties.Resources.harmadikhazteto, Properties.Resources.negyedikhazteto };
+            List<Image> kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
             foreach (Image item in kepek)
             {
                 int szel = 800;
