@@ -12,7 +12,7 @@ namespace KaracsonyiJatek2
 {
     public partial class Jatek : Form
     {
-        static Point MikulasStartPoz = new Point(200, 100);
+        static Point MikulasStartPoz = new Point(200, 350);
         static int acc = 0;
         static PictureBox santa = new PictureBox();
         static List<PictureBox> tetok = new List<PictureBox>();
@@ -31,20 +31,21 @@ namespace KaracsonyiJatek2
             List<Image> kepek = new List<Image>() { Properties.Resources.egyhazteto, Properties.Resources.masodikhazteto, Properties.Resources.harmadikhazteto, Properties.Resources.negyedikhazteto };
             foreach (Image item in kepek)
             {
+                int szel = 800;
+                int magas = Convert.ToInt32(szel * 0.23); 
                 tetok.Add(new PictureBox()
                 {
-                    Image = item,
-                    Size = new Size(Convert.ToInt32(item.Width * 0.6), Convert.ToInt32(item.Height * 0.6)),
+                    Size = new Size(szel, magas),
                     Location = new Point(999, 350),
+                    Image = item,
                     BackColor = Color.Transparent,
-                    SizeMode = PictureBoxSizeMode.StretchImage
+                    SizeMode = PictureBoxSizeMode.StretchImage,
                     
                 });
                 pictureBox2.Controls.Add(tetok[tetok.Count-1]);
                 tetok[tetok.Count - 1].BringToFront();
             }
-            tetok[0].Location = new Point(0, MikulasStartPoz.Y + santa.Height);
-            //santa.Location = new Point(santa.Location.X, tetok[3].Location.Y - santa.Height);
+            tetok[3].Location = new Point(0, MikulasStartPoz.Y + santa.Height);
             
         }
 
@@ -72,10 +73,6 @@ namespace KaracsonyiJatek2
                     MikulasUgras.Start();
                     acc = 15;
                 }
-                else
-                {
-                    
-                }
             }
         }
 
@@ -93,7 +90,7 @@ namespace KaracsonyiJatek2
             acc -= 1;
             //jo emlek
             //this.Location = new Point(this.Location.X, this.Location.Y + acc);
-
+            
 
             if (santa.Location.Y >= MikulasStartPoz.Y)
             {

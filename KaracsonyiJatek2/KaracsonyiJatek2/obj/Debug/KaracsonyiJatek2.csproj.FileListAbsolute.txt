@@ -31,3 +31,14 @@ D:\ezmartalanajosanta\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJate
 D:\ezmartalanajosanta\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe.config
 D:\ezmartalanajosanta\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe
 D:\ezmartalanajosanta\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.pdb
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe.config
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.pdb
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.AssemblyReference.cache
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Form1.resources
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Jatek.resources
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Properties.Resources.resources
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.GenerateResource.cache
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.CoreCompileInputs.cache
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.exe
+C:\Users\kerekadamtamas\Downloads\KaracsonyiJatek\KaracsonyiJatek\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.pdb
