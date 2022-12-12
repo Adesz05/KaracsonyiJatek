@@ -31,11 +31,10 @@ namespace KaracsonyiJatek2
             List<Image> kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
             foreach (Image item in kepek)
             {
-                int szel = 800;
-                int magas = Convert.ToInt32(szel * 0.23); 
+                double aranyoszto = 1.5;
                 tetok.Add(new PictureBox()
                 {
-                    Size = new Size(szel, magas),
+                    Size = new Size(Convert.ToInt32(item.Width / aranyoszto), Convert.ToInt32(item.Height / aranyoszto)),
                     Location = new Point(999, 350),
                     Image = item,
                     BackColor = Color.Transparent,
@@ -65,7 +64,7 @@ namespace KaracsonyiJatek2
 
         private void Jatek_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space ||e.KeyCode==Keys.Up)
             {
                 //MessageBox.Show("cica");
                 if (santa.Location.Y == MikulasStartPoz.Y)
