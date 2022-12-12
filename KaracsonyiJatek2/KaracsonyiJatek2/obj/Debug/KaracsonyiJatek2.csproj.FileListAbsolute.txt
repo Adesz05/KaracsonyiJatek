@@ -64,3 +64,14 @@ D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\KaracsonyiJatek2\KaracsonyiJatek2\
 D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.CoreCompileInputs.cache
 D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.exe
 D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.pdb
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe.config
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.pdb
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.AssemblyReference.cache
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Form1.resources
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Jatek.resources
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Properties.Resources.resources
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.GenerateResource.cache
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.CoreCompileInputs.cache
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.exe
+D:\HNASFFHSDFSDHFGJHASDASFHDASGF\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.pdb

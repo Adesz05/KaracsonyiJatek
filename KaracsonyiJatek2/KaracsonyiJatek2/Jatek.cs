@@ -12,6 +12,7 @@ namespace KaracsonyiJatek2
 {
     public partial class Jatek : Form
     {
+        static bool zuhan = false;
         static Point MikulasStartPoz = new Point(200, 350);
         static int acc = 0;
         static PictureBox santa = new PictureBox();
@@ -129,6 +130,39 @@ namespace KaracsonyiJatek2
                     i--;
                 }
             }
+            if (zuhan)
+            {
+                for (int i = 0; i < tetok.Count; i++)
+                {
+                    santa.Location = new Point(santa.Location.X, santa.Location.Y + 5);
+                    if (santa.Bounds.IntersectsWith(tetok[i].Bounds))
+                    {
+                        zuhan = false;
+                    }
+                    else
+                    {
+                        MikulasMozgas();
+                    }
+                }
+                
+            }
+            MikulasMozgas();
+        }
+
+        private void MikulasMozgas()
+        {
+            for (int i = 0; i < tetok.Count; i++)
+            {
+                if (!santa.Bounds.IntersectsWith(tetok[i].Bounds))
+                {
+                    zuhan = true;
+                }
+                else
+                {
+                    zuhan = false;
+                }
+            }
+         
         }
     }
 }
