@@ -116,5 +116,14 @@
   <ItemGroup>
     <None Include="Resources\menu_background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teto2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teto3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teto1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
