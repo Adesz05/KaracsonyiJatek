@@ -33,6 +33,7 @@ namespace KaracsonyiJatek2
             this.MikulasUgras = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TetoMozgas = new System.Windows.Forms.Timer(this.components);
+            this.AjandekMozgas = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,11 @@ namespace KaracsonyiJatek2
             this.TetoMozgas.Interval = 10;
             this.TetoMozgas.Tick += new System.EventHandler(this.TetoMozgas_Tick);
             // 
+            // AjandekMozgas
+            // 
+            this.AjandekMozgas.Interval = 1;
+            this.AjandekMozgas.Tick += new System.EventHandler(this.AjandekMozgas_Tick);
+            // 
             // Jatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,5 +81,6 @@ namespace KaracsonyiJatek2
         private System.Windows.Forms.Timer MikulasUgras;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer TetoMozgas;
+        private System.Windows.Forms.Timer AjandekMozgas;
     }
 }

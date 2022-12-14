@@ -19,11 +19,11 @@ namespace KaracsonyiJatek2
         static List<PictureBox> tetok = new List<PictureBox>();
         static Form kezdoform;
         static List<Image> kepek;
+        static List<PictureBox> ajandekok = new List<PictureBox>();
         static int luk = 400;
         static int Ykulonbseg = 100;
-        static int Ymax;
-        static int Ymin;
         static bool ugras = false;
+        static PictureBox ajandek;
         public Jatek(Form ez)
         {
             kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
@@ -32,13 +32,13 @@ namespace KaracsonyiJatek2
             MikulasGen();
             ElsoTetoGen();
             TetoMozgas.Start();
+            AjandekMozgas.Start();
         }
 
         private void ElsoTetoGen()
         {
             TetoGen(Properties.Resources.negyedikhazteto, new Point(0, MikulasStartPoz.Y + santa.Height));
         }
-
         private void TetoGen(Image teto, Point hely)
         {
             double aranyoszto = 1.3;
@@ -61,8 +61,18 @@ namespace KaracsonyiJatek2
             {
                 tetok.Last().Location = new Point(tetok.Last().Location.X, pictureBox2.Height - 20);
             }
+            int meret = 60;
+            ajandek = new PictureBox()
+            {
+                Size = new Size(meret, meret),
+                Location = new Point(tetok.Last().Location.X+tetok.Last().Width/2 - meret/2, tetok.Last().Location.Y - 80),
+                Image = Properties.Resources.gift,
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+            };
+            ajandekok.Add(ajandek);
+            pictureBox2.Controls.Add(ajandek);
         }
-
         private void MikulasGen()
         {
             santa = new PictureBox()
@@ -76,7 +86,6 @@ namespace KaracsonyiJatek2
             pictureBox2.Controls.Add(santa);
             santa.BringToFront();
         }
-
         private void Jatek_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space ||e.KeyCode==Keys.Up)
@@ -88,9 +97,6 @@ namespace KaracsonyiJatek2
                 }
             }
         }
-
-
-
         private void Jatek_FormClosing(object sender, FormClosingEventArgs e)
         {
             kezdoform.Show();
@@ -108,6 +114,7 @@ namespace KaracsonyiJatek2
 
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
+           
             if (tetok.Last().Location.X +tetok.Last().Width + luk < pictureBox2.Size.Width)
             {
                 TetoGen(kepek[new Random().Next(0, kepek.Count-1)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
@@ -116,6 +123,7 @@ namespace KaracsonyiJatek2
             for (int i = 0; i < tetok.Count; i++)
             {
                 tetok[i].Location = new Point(tetok[i].Location.X - 10, tetok[i].Location.Y);
+
                 if (tetok[i].Location.X + tetok[i].Width <= 0)
                 {
                     pictureBox2.Controls.Remove(tetok[i]);
@@ -139,11 +147,13 @@ namespace KaracsonyiJatek2
                         {
                             TetoMozgas.Stop();
                             MikulasUgras.Stop();
+                            AjandekMozgas.Stop();
                         }
                     } else if (santa.Location.Y > pictureBox2.Size.Height)
                     {
                         TetoMozgas.Stop();
                         MikulasUgras.Stop();
+                        AjandekMozgas.Stop();
                     }
                 }
             }
@@ -152,13 +162,26 @@ namespace KaracsonyiJatek2
                 for (int i = 0; i < tetok.Count; i++)
                 {
                     santa.Location = new Point(santa.Location.X, santa.Location.Y + 5);
-                  
                 }
-                
             }
-          
         }
 
-       
+        private void AjandekMozgas_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ajandekok.Count; i++)
+            {
+                ajandekok[i].Location = new Point(ajandekok[i].Location.X - 10, ajandekok[i].Location.Y); 
+            }
+
+            for (int i = 0; i < ajandekok.Count; i++)
+            {
+                if (santa.Bounds.IntersectsWith(ajandekok[i].Bounds))
+                {
+                    pictureBox2.Controls.Remove(ajandekok[i]);
+                    ajandekok.RemoveAt(i);
+                    
+                }
+            }
+        }
     }
 }
