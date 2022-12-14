@@ -19,10 +19,11 @@ namespace KaracsonyiJatek2
         static List<PictureBox> tetok = new List<PictureBox>();
         static Form kezdoform;
         static List<Image> kepek;
-        static int luk = 200;
+        static int luk = 400;
         static int Ykulonbseg = 100;
         static int Ymax;
         static int Ymin;
+        static bool ugras = false;
         public Jatek(Form ez)
         {
             kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
@@ -41,14 +42,15 @@ namespace KaracsonyiJatek2
         private void TetoGen(Image teto, Point hely)
         {
             double aranyoszto = 1.3;
-            tetok.Add(new PictureBox()
+            PictureBox tet = new PictureBox
             {
                 Size = new Size(Convert.ToInt32(teto.Width / aranyoszto), Convert.ToInt32(teto.Height / aranyoszto)),
                 Location = hely,
                 Image = teto,
                 BackColor = Color.Transparent,
                 SizeMode = PictureBoxSizeMode.StretchImage,
-            });
+            };
+            tetok.Add(tet);
             pictureBox2.Controls.Add(tetok.Last());
             tetok.Last().BringToFront();
             if (pictureBox2.Height - tetok.Last().Height > tetok.Last().Location.Y)
@@ -65,10 +67,10 @@ namespace KaracsonyiJatek2
         {
             santa = new PictureBox()
             {
-                Size = new Size(300, 150),
+                Size = new Size(60, 150),
                 Location = MikulasStartPoz,
                 Image = Properties.Resources.santa,
-                BackColor = Color.Transparent,
+                BackColor = Color.White,
                 SizeMode = PictureBoxSizeMode.Zoom,
             };
             pictureBox2.Controls.Add(santa);
@@ -79,11 +81,10 @@ namespace KaracsonyiJatek2
         {
             if (e.KeyCode == Keys.Space ||e.KeyCode==Keys.Up)
             {
-                //MessageBox.Show("cica");
-                if (santa.Location.Y == MikulasStartPoz.Y)
+                if (!ugras)
                 {
                     MikulasUgras.Start();
-                    acc = 15;
+                    acc = 25;
                 }
             }
         }
@@ -97,20 +98,12 @@ namespace KaracsonyiJatek2
 
         private void MikulasUgras_Tick(object sender, EventArgs e)
         {
+            ugras = true;
             santa.Image = Properties.Resources.ugras;
             santa.Location = new Point(santa.Location.X, santa.Location.Y - acc);
             acc -= 1;
             //jo emlek
             //this.Location = new Point(this.Location.X, this.Location.Y + acc);
-            
-
-            if (santa.Location.Y >= MikulasStartPoz.Y)
-            {
-                santa.Location = MikulasStartPoz;
-                acc = 0;
-                santa.Image = Properties.Resources.santa;
-                MikulasUgras.Stop();
-            }
         }
 
         private void TetoMozgas_Tick(object sender, EventArgs e)
@@ -129,40 +122,43 @@ namespace KaracsonyiJatek2
                     tetok.Remove(tetok[i]);
                     i--;
                 }
+                foreach (PictureBox tet in tetok)
+                {
+                    if (santa.Bounds.IntersectsWith(tet.Bounds) && tet.Location.Y > santa.Location.Y + santa.Size.Height + acc-20)
+                    {
+                        if (ugras)
+                        {
+                            santa.Location = new Point(santa.Location.X, tet.Location.Y - santa.Size.Height);
+                            acc = 0;
+                            santa.Image = Properties.Resources.santa;
+                            MikulasUgras.Stop();
+                            ugras = false;
+                            break;
+                        }
+                        else
+                        {
+                            TetoMozgas.Stop();
+                            MikulasUgras.Stop();
+                        }
+                    } else if (santa.Location.Y > pictureBox2.Size.Height)
+                    {
+                        TetoMozgas.Stop();
+                        MikulasUgras.Stop();
+                    }
+                }
             }
             if (zuhan)
             {
                 for (int i = 0; i < tetok.Count; i++)
                 {
                     santa.Location = new Point(santa.Location.X, santa.Location.Y + 5);
-                    if (santa.Bounds.IntersectsWith(tetok[i].Bounds))
-                    {
-                        zuhan = false;
-                    }
-                    else
-                    {
-                        MikulasMozgas();
-                    }
+                  
                 }
                 
             }
-            MikulasMozgas();
+          
         }
 
-        private void MikulasMozgas()
-        {
-            for (int i = 0; i < tetok.Count; i++)
-            {
-                if (!santa.Bounds.IntersectsWith(tetok[i].Bounds))
-                {
-                    zuhan = true;
-                }
-                else
-                {
-                    zuhan = false;
-                }
-            }
-         
-        }
+       
     }
 }
