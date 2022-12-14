@@ -23,16 +23,34 @@ namespace KaracsonyiJatek2
         static int luk = 400;
         static int Ykulonbseg = 100;
         static bool ugras = false;
+        static int pontszam = 0;
+        Label pontszamLbl;
         static PictureBox ajandek;
+        static int tetogyorsasag = 10;
         public Jatek(Form ez)
         {
             kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
             kezdoform = ez;
             InitializeComponent();
+            PontszamGen();
             MikulasGen();
             ElsoTetoGen();
             TetoMozgas.Start();
             AjandekMozgas.Start();
+        }
+
+        private void PontszamGen()
+        {
+            pontszamLbl = new Label
+            {
+                Location = new Point(1100, 100),
+                BackColor = Color.Transparent,
+                Text = $"Pontszám: {pontszam}",
+                AutoSize = true,
+                Font = new Font("Calibri", 18),
+                ForeColor = Color.White,
+            };
+            pictureBox2.Controls.Add(pontszamLbl);
         }
 
         private void ElsoTetoGen()
@@ -57,21 +75,24 @@ namespace KaracsonyiJatek2
             {
                 tetok.Last().Location = new Point(tetok.Last().Location.X, pictureBox2.Height - tetok.Last().Height);
             }
-            if (tetok.Last().Location.Y > pictureBox2.Height-20)
+            if (tetok.Last().Location.Y > pictureBox2.Height - 20)
             {
                 tetok.Last().Location = new Point(tetok.Last().Location.X, pictureBox2.Height - 20);
             }
             int meret = 60;
-            ajandek = new PictureBox()
+            if (new Random().Next(0,10)>7)
             {
-                Size = new Size(meret, meret),
-                Location = new Point(tetok.Last().Location.X+tetok.Last().Width/2 - meret/2, tetok.Last().Location.Y - 80),
-                Image = Properties.Resources.gift,
-                BackColor = Color.Transparent,
-                SizeMode = PictureBoxSizeMode.StretchImage,
-            };
-            ajandekok.Add(ajandek);
-            pictureBox2.Controls.Add(ajandek);
+                ajandek = new PictureBox()
+                {
+                    Size = new Size(meret, meret),
+                    Location = new Point(tetok.Last().Location.X + tetok.Last().Width / 2 - meret / 2, tetok.Last().Location.Y - 80),
+                    Image = Properties.Resources.gift,
+                    BackColor = Color.Transparent,
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                };
+                ajandekok.Add(ajandek);
+                pictureBox2.Controls.Add(ajandek);
+            }
         }
         private void MikulasGen()
         {
@@ -88,7 +109,7 @@ namespace KaracsonyiJatek2
         }
         private void Jatek_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space ||e.KeyCode==Keys.Up)
+            if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Up)
             {
                 if (!ugras)
                 {
@@ -114,25 +135,27 @@ namespace KaracsonyiJatek2
 
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
-           
-            if (tetok.Last().Location.X +tetok.Last().Width + luk < pictureBox2.Size.Width)
+
+            if (tetok.Last().Location.X + tetok.Last().Width + luk < pictureBox2.Size.Width)
             {
-                TetoGen(kepek[new Random().Next(0, kepek.Count-1)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
+                TetoGen(kepek[new Random().Next(0, kepek.Count - 1)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
             }
 
             for (int i = 0; i < tetok.Count; i++)
             {
-                tetok[i].Location = new Point(tetok[i].Location.X - 10, tetok[i].Location.Y);
+                tetok[i].Location = new Point(tetok[i].Location.X - tetogyorsasag, tetok[i].Location.Y);
 
                 if (tetok[i].Location.X + tetok[i].Width <= 0)
                 {
                     pictureBox2.Controls.Remove(tetok[i]);
                     tetok.Remove(tetok[i]);
+                    pontszam++;
+                    pontszamLbl.Text = $"Pontszám: {pontszam}";
                     i--;
                 }
                 foreach (PictureBox tet in tetok)
                 {
-                    if (santa.Bounds.IntersectsWith(tet.Bounds) && tet.Location.Y > santa.Location.Y + santa.Size.Height + acc-20)
+                    if (santa.Bounds.IntersectsWith(tet.Bounds) && tet.Location.Y > santa.Location.Y + santa.Size.Height + acc - 20)
                     {
                         if (ugras)
                         {
@@ -149,7 +172,8 @@ namespace KaracsonyiJatek2
                             MikulasUgras.Stop();
                             AjandekMozgas.Stop();
                         }
-                    } else if (santa.Location.Y > pictureBox2.Size.Height)
+                    }
+                    else if (santa.Location.Y > pictureBox2.Size.Height)
                     {
                         TetoMozgas.Stop();
                         MikulasUgras.Stop();
@@ -170,7 +194,7 @@ namespace KaracsonyiJatek2
         {
             for (int i = 0; i < ajandekok.Count; i++)
             {
-                ajandekok[i].Location = new Point(ajandekok[i].Location.X - 10, ajandekok[i].Location.Y); 
+                ajandekok[i].Location = new Point(ajandekok[i].Location.X - tetogyorsasag, ajandekok[i].Location.Y);
             }
 
             for (int i = 0; i < ajandekok.Count; i++)
@@ -179,7 +203,8 @@ namespace KaracsonyiJatek2
                 {
                     pictureBox2.Controls.Remove(ajandekok[i]);
                     ajandekok.RemoveAt(i);
-                    
+                    pontszam += 3;
+                    pontszamLbl.Text = $"Pontszám: {pontszam}";
                 }
             }
         }
