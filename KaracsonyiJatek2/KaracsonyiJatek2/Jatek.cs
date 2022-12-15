@@ -36,7 +36,6 @@ namespace KaracsonyiJatek2
             MikulasGen();
             ElsoTetoGen();
             TetoMozgas.Start();
-            AjandekMozgas.Start();
         }
 
         private void PontszamGen()
@@ -191,8 +190,6 @@ namespace KaracsonyiJatek2
             }
         }
 
-        private void AjandekMozgas_Tick(object sender, EventArgs e)
-        {
             for (int i = 0; i < ajandekok.Count; i++)
             {
                 ajandekok[i].Location = new Point(ajandekok[i].Location.X - tetogyorsasag, ajandekok[i].Location.Y);
@@ -208,6 +205,7 @@ namespace KaracsonyiJatek2
                     pontszamLbl.Text = $"Pontszám: {pontszam}";
                 }
             }
+
         }
     }
 }
