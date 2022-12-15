@@ -86,3 +86,14 @@ D:\santa_cucc\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.cspro
 D:\santa_cucc\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.CoreCompileInputs.cache
 D:\santa_cucc\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.exe
 D:\santa_cucc\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.pdb
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe.config
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.exe
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\bin\Debug\KaracsonyiJatek2.pdb
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csprojAssemblyReference.cache
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Form1.resources
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Jatek.resources
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.Properties.Resources.resources
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.GenerateResource.cache
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.csproj.CoreCompileInputs.cache
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.exe
+D:\BG\KaracsonyiJatek2\KaracsonyiJatek2\KaracsonyiJatek2\obj\Debug\KaracsonyiJatek2.pdb

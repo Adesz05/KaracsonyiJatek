@@ -27,6 +27,7 @@ namespace KaracsonyiJatek2
         Label pontszamLbl;
         static PictureBox ajandek;
         static int tetogyorsasag = 10;
+        static Panel helpPanel;
         public Jatek(Form ez)
         {
             kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
@@ -104,6 +105,12 @@ namespace KaracsonyiJatek2
                 BackColor = Color.White,
                 SizeMode = PictureBoxSizeMode.Zoom,
             };
+            helpPanel = new Panel()
+            {
+                Location = new Point(santa.Location.X, santa.Location.Y + santa.Size.Height),
+                Size = new Size(2,2),
+                BackColor = Color.Blue
+            };
             pictureBox2.Controls.Add(santa);
             santa.BringToFront();
         }
@@ -128,6 +135,7 @@ namespace KaracsonyiJatek2
             ugras = true;
             santa.Image = Properties.Resources.ugras;
             santa.Location = new Point(santa.Location.X, santa.Location.Y - acc);
+            helpPanel.Location = new Point(santa.Location.X, santa.Location.Y + santa.Size.Height);
             acc -= 1;
             //jo emlek
             //this.Location = new Point(this.Location.X, this.Location.Y + acc);
