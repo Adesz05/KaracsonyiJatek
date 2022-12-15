@@ -119,7 +119,8 @@ namespace KaracsonyiJatek2
             {
                 if (!ugras)
                 {
-                    MikulasUgras.Start();
+                    santa.Image = Properties.Resources.ugras;
+                    ugras = true;
                     acc = 25;
                 }
             }
@@ -131,21 +132,15 @@ namespace KaracsonyiJatek2
 
         private void MikulasUgras_Tick(object sender, EventArgs e)
         {
-            ugras = true;
-            santa.Image = Properties.Resources.ugras;
-            santa.Location = new Point(santa.Location.X, santa.Location.Y - acc);
-            helpPanel.Location = new Point(santa.Location.X, santa.Location.Y + santa.Size.Height);
-            acc -= 1;
             //jo emlek
             //this.Location = new Point(this.Location.X, this.Location.Y + acc);
         }
 
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
-
             if (tetok.Last().Location.X + tetok.Last().Width + luk < pictureBox2.Size.Width)
             {
-                TetoGen(kepek[new Random().Next(0, kepek.Count - 1)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
+                TetoGen(kepek[new Random().Next(0, kepek.Count)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
             }
 
             for (int i = 0; i < tetok.Count; i++)
@@ -161,30 +156,38 @@ namespace KaracsonyiJatek2
                     i--;
                 }
             }
+            if (ugras)
+            {
+                santa.Location = new Point(santa.Location.X, santa.Location.Y - acc);
+                helpPanel.Location = new Point(santa.Location.X, santa.Location.Y + santa.Size.Height);
+                acc -= 1;
+            }
+            bool eshet = true;
             foreach (PictureBox tet in tetok)
             {
                 if (santa.Bounds.IntersectsWith(tet.Bounds) && tet.Location.Y > santa.Location.Y + santa.Size.Height + acc - 20)
                 {
                     if (ugras)
                     {
-                        santa.Location = new Point(santa.Location.X, tet.Location.Y - santa.Size.Height);
-                        acc = 0;
-                        santa.Image = Properties.Resources.santa;
-                        MikulasUgras.Stop();
                         ugras = false;
-                        break;
-                    }
-                    else
-                    {
-                        TetoMozgas.Stop();
-                        MikulasUgras.Stop();
+                        acc = 0;
+                        santa.Location = new Point(santa.Location.X, tet.Location.Y - santa.Size.Height);
+                        santa.Image = Properties.Resources.santa;
                     }
                 }
                 else if (santa.Location.Y > pictureBox2.Size.Height)
                 {
                     TetoMozgas.Stop();
-                    MikulasUgras.Stop();
                 }
+                if (helpPanel.Bounds.IntersectsWith(tet.Bounds))
+                {
+                    eshet = false;
+                }
+            }
+            if (eshet)
+            {
+                //MessageBox.Show($"ugras: {ugras.ToString()}\neshet: {eshet.ToString()}");
+                ugras = true;
             }
         }
     }
