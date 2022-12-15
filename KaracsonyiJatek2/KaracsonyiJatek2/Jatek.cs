@@ -37,7 +37,6 @@ namespace KaracsonyiJatek2
             MikulasGen();
             ElsoTetoGen();
             TetoMozgas.Start();
-            AjandekMozgas.Start();
         }
 
         private void PontszamGen()
@@ -178,14 +177,12 @@ namespace KaracsonyiJatek2
                         {
                             TetoMozgas.Stop();
                             MikulasUgras.Stop();
-                            AjandekMozgas.Stop();
                         }
                     }
                     else if (santa.Location.Y > pictureBox2.Size.Height)
                     {
                         TetoMozgas.Stop();
                         MikulasUgras.Stop();
-                        AjandekMozgas.Stop();
                     }
                 }
             }
@@ -196,10 +193,7 @@ namespace KaracsonyiJatek2
                     santa.Location = new Point(santa.Location.X, santa.Location.Y + 5);
                 }
             }
-        }
 
-        private void AjandekMozgas_Tick(object sender, EventArgs e)
-        {
             for (int i = 0; i < ajandekok.Count; i++)
             {
                 ajandekok[i].Location = new Point(ajandekok[i].Location.X - tetogyorsasag, ajandekok[i].Location.Y);
@@ -215,6 +209,7 @@ namespace KaracsonyiJatek2
                     pontszamLbl.Text = $"Pontszám: {pontszam}";
                 }
             }
+
         }
     }
 }
