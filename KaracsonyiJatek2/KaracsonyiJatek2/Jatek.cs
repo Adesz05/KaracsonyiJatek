@@ -138,6 +138,21 @@ namespace KaracsonyiJatek2
 
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
+            for (int i = 0; i < ajandekok.Count; i++)
+            {
+                ajandekok[i].Location = new Point(ajandekok[i].Location.X - tetogyorsasag, ajandekok[i].Location.Y);
+            }
+
+            for (int i = 0; i < ajandekok.Count; i++)
+            {
+                if (santa.Bounds.IntersectsWith(ajandekok[i].Bounds))
+                {
+                    pictureBox2.Controls.Remove(ajandekok[i]);
+                    ajandekok.RemoveAt(i);
+                    pontszam += 3;
+                    pontszamLbl.Text = $"Pontszám: {pontszam}";
+                }
+            }
             if (tetok.Last().Location.X + tetok.Last().Width + luk < pictureBox2.Size.Width)
             {
                 TetoGen(kepek[new Random().Next(0, kepek.Count)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
