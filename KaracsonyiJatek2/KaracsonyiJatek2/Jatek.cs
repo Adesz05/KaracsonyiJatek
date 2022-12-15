@@ -12,7 +12,6 @@ namespace KaracsonyiJatek2
 {
     public partial class Jatek : Form
     {
-        static bool zuhan = false;
         static Point MikulasStartPoz = new Point(200, 350);
         static int acc = 0;
         static PictureBox santa = new PictureBox();
@@ -111,6 +110,7 @@ namespace KaracsonyiJatek2
                 Size = new Size(2,2),
                 BackColor = Color.Blue
             };
+            pictureBox2.Controls.Add(helpPanel);
             pictureBox2.Controls.Add(santa);
             santa.BringToFront();
         }
@@ -161,39 +161,32 @@ namespace KaracsonyiJatek2
                     pontszamLbl.Text = $"Pontszám: {pontszam}";
                     i--;
                 }
-                foreach (PictureBox tet in tetok)
+            }
+            foreach (PictureBox tet in tetok)
+            {
+                if (santa.Bounds.IntersectsWith(tet.Bounds) && tet.Location.Y > santa.Location.Y + santa.Size.Height + acc - 20)
                 {
-                    if (santa.Bounds.IntersectsWith(tet.Bounds) && tet.Location.Y > santa.Location.Y + santa.Size.Height + acc - 20)
+                    if (ugras)
                     {
-                        if (ugras)
-                        {
-                            santa.Location = new Point(santa.Location.X, tet.Location.Y - santa.Size.Height);
-                            acc = 0;
-                            santa.Image = Properties.Resources.santa;
-                            MikulasUgras.Stop();
-                            ugras = false;
-                            break;
-                        }
-                        else
-                        {
-                            TetoMozgas.Stop();
-                            MikulasUgras.Stop();
-                            AjandekMozgas.Stop();
-                        }
+                        santa.Location = new Point(santa.Location.X, tet.Location.Y - santa.Size.Height);
+                        acc = 0;
+                        santa.Image = Properties.Resources.santa;
+                        MikulasUgras.Stop();
+                        ugras = false;
+                        break;
                     }
-                    else if (santa.Location.Y > pictureBox2.Size.Height)
+                    else
                     {
                         TetoMozgas.Stop();
                         MikulasUgras.Stop();
                         AjandekMozgas.Stop();
                     }
                 }
-            }
-            if (zuhan)
-            {
-                for (int i = 0; i < tetok.Count; i++)
+                else if (santa.Location.Y > pictureBox2.Size.Height)
                 {
-                    santa.Location = new Point(santa.Location.X, santa.Location.Y + 5);
+                    TetoMozgas.Stop();
+                    MikulasUgras.Stop();
+                    AjandekMozgas.Stop();
                 }
             }
         }
