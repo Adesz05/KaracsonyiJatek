@@ -27,6 +27,7 @@ namespace KaracsonyiJatek2
         static PictureBox ajandek;
         static int tetogyorsasag = 10;
         static Panel helpPanel;
+        static Image AktivSanta = Properties.Resources.santa;
         public Jatek(Form ez)
         {
             kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
@@ -99,15 +100,15 @@ namespace KaracsonyiJatek2
             {
                 Size = new Size(60, 150),
                 Location = MikulasStartPoz,
-                Image = Properties.Resources.santa,
-                BackColor = Color.White,
+                Image = AktivSanta,
+                BackColor = Color.Transparent,
                 SizeMode = PictureBoxSizeMode.Zoom,
             };
             helpPanel = new Panel()
             {
                 Location = new Point(santa.Location.X, santa.Location.Y + santa.Size.Height),
                 Size = new Size(2,2),
-                BackColor = Color.Blue
+                BackColor = Color.Transparent
             };
             pictureBox2.Controls.Add(helpPanel);
             pictureBox2.Controls.Add(santa);
@@ -187,7 +188,7 @@ namespace KaracsonyiJatek2
                         ugras = false;
                         acc = 0;
                         santa.Location = new Point(santa.Location.X, tet.Location.Y - santa.Size.Height);
-                        santa.Image = Properties.Resources.santa;
+                        santa.Image = AktivSanta;
                     }
                 }
                 else if (santa.Location.Y > pictureBox2.Size.Height)
