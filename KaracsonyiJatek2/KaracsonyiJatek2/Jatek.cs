@@ -178,34 +178,14 @@ namespace KaracsonyiJatek2
                     {
                         TetoMozgas.Stop();
                         MikulasUgras.Stop();
-                        AjandekMozgas.Stop();
                     }
                 }
                 else if (santa.Location.Y > pictureBox2.Size.Height)
                 {
                     TetoMozgas.Stop();
                     MikulasUgras.Stop();
-                    AjandekMozgas.Stop();
                 }
             }
-        }
-
-            for (int i = 0; i < ajandekok.Count; i++)
-            {
-                ajandekok[i].Location = new Point(ajandekok[i].Location.X - tetogyorsasag, ajandekok[i].Location.Y);
-            }
-
-            for (int i = 0; i < ajandekok.Count; i++)
-            {
-                if (santa.Bounds.IntersectsWith(ajandekok[i].Bounds))
-                {
-                    pictureBox2.Controls.Remove(ajandekok[i]);
-                    ajandekok.RemoveAt(i);
-                    pontszam += 3;
-                    pontszamLbl.Text = $"Pontszám: {pontszam}";
-                }
-            }
-
         }
     }
 }
