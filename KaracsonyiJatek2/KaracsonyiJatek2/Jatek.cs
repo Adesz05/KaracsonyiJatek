@@ -145,7 +145,7 @@ namespace KaracsonyiJatek2
         }
         private void Jatek_FormClosing(object sender, FormClosingEventArgs e)
         {
-            kezdoform.Show();
+            Application.Exit();
         }
         private void MikulasUgras_Tick(object sender, EventArgs e)
         {
@@ -154,9 +154,10 @@ namespace KaracsonyiJatek2
         }
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
-            if (santa.Location.Y > 580)
+            if (santa.Location.Y > 550)
             {
                 TetoMozgas.Stop();
+                pictureBox2.Controls.Remove(santa);
                 string uzenet = "A mikulás leesett, sajnos nem tudta kivinni az ajánédkokat, és ez a te lelkeden szárad!";
                 MessageBox.Show(uzenet, "Játék vége", MessageBoxButtons.OK);
                 Close();
