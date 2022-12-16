@@ -146,20 +146,24 @@ namespace KaracsonyiJatek2
         {
             kezdoform.Show();
         }
-
         private void MikulasUgras_Tick(object sender, EventArgs e)
         {
             //jo emlek
             //this.Location = new Point(this.Location.X, this.Location.Y + acc);
         }
-
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
+            if (santa.Location.Y > 580)
+            {
+                TetoMozgas.Stop();
+                string uzenet = "A mikulás leesett, sajnos nem tudta kivinni az ajánédkokat, és ez a te lelkeden szárad!";
+                MessageBox.Show(uzenet, "Játék vége", MessageBoxButtons.OK);
+                Close();
+            }
             for (int i = 0; i < ajandekok.Count; i++)
             {
                 ajandekok[i].Location = new Point(ajandekok[i].Location.X - tetogyorsasag, ajandekok[i].Location.Y);
             }
-
             for (int i = 0; i < ajandekok.Count; i++)
             {
                 if (santa.Bounds.IntersectsWith(ajandekok[i].Bounds))
@@ -189,7 +193,6 @@ namespace KaracsonyiJatek2
             {
                 TetoGen(kepek[new Random().Next(0, kepek.Count)], new Point(pictureBox2.Width, tetok.Last().Location.Y + new Random().Next(-Ykulonbseg, Ykulonbseg)));
             }
-
             for (int i = 0; i < tetok.Count; i++)
             {
                 tetok[i].Location = new Point(tetok[i].Location.X - tetogyorsasag, tetok[i].Location.Y);
