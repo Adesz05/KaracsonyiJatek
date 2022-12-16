@@ -134,5 +134,14 @@
   <ItemGroup>
     <None Include="Resources\Amoga és Vent.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\santa_115.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\santa_130.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\santa_145.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -145,6 +145,15 @@
   <data name="santa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\santa.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="santa_115" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\santa_115.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="santa_130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\santa_130.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="santa_145" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\santa_145.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="teto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

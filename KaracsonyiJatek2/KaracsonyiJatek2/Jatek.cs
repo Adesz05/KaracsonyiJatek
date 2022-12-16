@@ -97,7 +97,7 @@ namespace KaracsonyiJatek2
                 ajandekok.Add(ajandek);
                 pictureBox2.Controls.Add(ajandek);
             }
-            if (r==1)
+            else if (tetok.Last().Width>600 && r<2)
             {
                 amogaesvent = new PictureBox()
                 {
@@ -154,6 +154,21 @@ namespace KaracsonyiJatek2
         }
         private void TetoMozgas_Tick(object sender, EventArgs e)
         {
+            if (pontszam>=30 && pontszam<60)
+            {
+                AktivSanta = Properties.Resources.santa_115;
+                tetogyorsasag = 12;
+            }
+            else if (pontszam >= 60 && pontszam < 90)
+            {
+                AktivSanta= Properties.Resources.santa_130;
+                tetogyorsasag = 13;
+            }
+            else if (pontszam >= 90)
+            {
+                AktivSanta= Properties.Resources.santa_145;
+                tetogyorsasag = 15;
+            }
             if (santa.Location.Y > 550)
             {
                 TetoMozgas.Stop();
