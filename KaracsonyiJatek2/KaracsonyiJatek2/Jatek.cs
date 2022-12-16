@@ -30,6 +30,7 @@ namespace KaracsonyiJatek2
         static int tetogyorsasag = 10;
         static Panel helpPanel;
         static Image AktivSanta = Properties.Resources.santa;
+        Random rand = new Random();
         public Jatek(Form ez)
         {
             kepek = new List<Image>() { Properties.Resources.teto1, Properties.Resources.teto2, Properties.Resources.teto3, Properties.Resources.negyedikhazteto };
@@ -82,8 +83,8 @@ namespace KaracsonyiJatek2
                 tetok.Last().Location = new Point(tetok.Last().Location.X, pictureBox2.Height - 20);
             }
             int meret = 60;
-            int r = new Random().Next(0, 20);
-            if (r>15)
+            int r = rand.Next(0, 20);
+            if (r > 15)
             {
                 ajandek = new PictureBox()
                 {
@@ -96,7 +97,7 @@ namespace KaracsonyiJatek2
                 ajandekok.Add(ajandek);
                 pictureBox2.Controls.Add(ajandek);
             }
-            else if (tetok.Last().Image==Properties.Resources.negyedikhazteto)
+            if (r==1)
             {
                 amogaesvent = new PictureBox()
                 {
