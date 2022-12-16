@@ -19,12 +19,14 @@ namespace KaracsonyiJatek2
         static Form kezdoform;
         static List<Image> kepek;
         static List<PictureBox> ajandekok = new List<PictureBox>();
+        static List<PictureBox> amogaesventek = new List<PictureBox>();
         static int luk = 400;
         static int Ykulonbseg = 100;
         static bool ugras = false;
         static int pontszam = 0;
         Label pontszamLbl;
         static PictureBox ajandek;
+        static PictureBox amogaesvent;
         static int tetogyorsasag = 10;
         static Panel helpPanel;
         static Image AktivSanta = Properties.Resources.santa;
@@ -80,7 +82,8 @@ namespace KaracsonyiJatek2
                 tetok.Last().Location = new Point(tetok.Last().Location.X, pictureBox2.Height - 20);
             }
             int meret = 60;
-            if (new Random().Next(0,10)>7)
+            int r = new Random().Next(0, 20);
+            if (r>15)
             {
                 ajandek = new PictureBox()
                 {
@@ -92,6 +95,19 @@ namespace KaracsonyiJatek2
                 };
                 ajandekok.Add(ajandek);
                 pictureBox2.Controls.Add(ajandek);
+            }
+            else if (tetok.Last().Image==Properties.Resources.negyedikhazteto)
+            {
+                amogaesvent = new PictureBox()
+                {
+                    Size = new Size(meret*2, meret),
+                    Location = new Point(tetok.Last().Location.X + tetok.Last().Width / 2 - meret / 2, tetok.Last().Location.Y - 60),
+                    Image = Properties.Resources.Amoga_és_Vent,
+                    BackColor = Color.Transparent,
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                };
+                amogaesventek.Add(amogaesvent);
+                pictureBox2.Controls.Add(amogaesvent);
             }
         }
         private void MikulasGen()
@@ -151,6 +167,21 @@ namespace KaracsonyiJatek2
                     pictureBox2.Controls.Remove(ajandekok[i]);
                     ajandekok.RemoveAt(i);
                     pontszam += 3;
+                    pontszamLbl.Text = $"Pontszám: {pontszam}";
+                }
+            }
+            for (int i = 0; i < amogaesventek.Count; i++)
+            {
+                amogaesventek[i].Location = new Point(amogaesventek[i].Location.X - tetogyorsasag, amogaesventek[i].Location.Y);
+            }
+
+            for (int i = 0; i < amogaesventek.Count; i++)
+            {
+                if (santa.Bounds.IntersectsWith(amogaesventek[i].Bounds))
+                {
+                    pictureBox2.Controls.Remove(amogaesventek[i]);
+                    amogaesventek.RemoveAt(i);
+                    pontszam =0;
                     pontszamLbl.Text = $"Pontszám: {pontszam}";
                 }
             }
